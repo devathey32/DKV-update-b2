@@ -26,7 +26,8 @@ function App() {
     if (contentRef.current) {
       const header = contentRef.current.querySelector('h2');
       if (header) {
-        header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerPosition = header.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: headerPosition, behavior: 'instant' });
       }
     }
   }, [activeTab]);

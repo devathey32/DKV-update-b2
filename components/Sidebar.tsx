@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquare, X } from 'lucide-react';
+import { MessageSquare, X, Download } from 'lucide-react';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -33,6 +33,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </div>
 
           <nav className="space-y-2">
+            <a
+              href="/files/informasi_kelas_xi_dkv_2.pdf"
+              download
+              className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-fast ease-smooth group active:scale-[0.98]"
+            >
+              <div className="bg-primary/20 p-2 rounded-lg text-primary group-hover:scale-110 transition-transform duration-fast">
+                <Download size={20} />
+              </div>
+              <span className="font-heading font-semibold text-slate-200 group-hover:text-white transition-colors duration-fast">
+                Download PDF
+              </span>
+            </a>
+
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSe-F4rZ0WioIUIOxqBKmPWVZ1GiBbtO_kZz_MKNEnS7IRVNKw/viewform"
               target="_blank"

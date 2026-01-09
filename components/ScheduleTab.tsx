@@ -37,7 +37,7 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
             {/* Header - Clickable */}
             <button
               onClick={() => toggleDay(day)}
-              className={`w-full px-6 py-4 flex items-center justify-between ${isToday ? 'bg-gradient-to-r from-amber-500/20 to-transparent' : 'bg-white/5'} hover:bg-white/10 transition-all duration-fast ease-smooth`}
+              className={`w-full px-6 py-4 flex items-center justify-between ${isToday ? 'bg-gradient-to-r from-amber-500/20 to-transparent' : 'bg-white/5'} hover:bg-white/10 transition-colors duration-fast ease-smooth`}
             >
               <div className="flex items-center gap-3">
                 <Calendar size={18} className={isToday ? 'text-amber-400' : 'text-slate-500'} />
@@ -61,7 +61,7 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
 
             {/* List View - Collapsible */}
             {isOpen && (
-              <div className="divide-y divide-white/5">
+              <div className="divide-y divide-white/5 transition-all duration-normal ease-smooth">
                 {rows.map((row, idx) => {
                   const isBreak = row.subject === 'ISTIRAHAT';
                   if (isBreak) {
@@ -74,11 +74,14 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
                     );
                   }
 
+                  // Calculate lesson number (1-8, skipping breaks)
+                  const lessonNumber = rows.slice(0, idx).filter(r => r.subject !== 'ISTIRAHAT').length + 1;
+
                   return (
                     <div key={idx} className="p-4 hover:bg-white/10 transition-all duration-fast ease-smooth flex gap-4 group active:scale-[0.99]">
                       <div className="flex flex-col items-center pt-1 min-w-[4rem]">
                         <span className="text-xs font-bold text-accent bg-accent/10 px-2 py-1 rounded-full border border-accent/20">
-                          {idx + 1}
+                          {lessonNumber}
                         </span>
                         <div className="h-full w-px bg-white/5 my-2 group-hover:bg-primary/30 transition-colors duration-fast"></div>
                       </div>

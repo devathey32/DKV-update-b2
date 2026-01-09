@@ -9,7 +9,7 @@ export const PJOKInfoCard: React.FC = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed right-4 bottom-32 md:bottom-20 z-40 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full p-2 transition-all duration-fast ease-smooth active:scale-95"
+          className="fixed right-4 bottom-28 md:bottom-24 z-40 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full p-2 transition-all duration-fast ease-smooth active:scale-95"
           title="Informasi PJOK"
         >
           <Info size={20} className="text-accent" />
@@ -17,7 +17,7 @@ export const PJOKInfoCard: React.FC = () => {
       )}
 
       {isOpen && (
-        <div className="fixed right-4 bottom-32 md:bottom-20 z-40 w-72 bg-[#0f172a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl animate-modal-enter">
+        <div className="fixed right-4 bottom-[calc(7rem+0.5rem)] md:bottom-[calc(6rem+0.5rem)] z-40 w-72 bg-[#0f172a]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl transition-all duration-normal ease-smooth origin-bottom">
           <div className="flex justify-between items-start mb-3">
             <div className="flex items-center gap-2">
               <div className="bg-accent/20 p-1.5 rounded-lg">

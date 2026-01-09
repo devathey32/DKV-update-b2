@@ -46,14 +46,14 @@ export const scheduleData: ScheduleData = {
     { no: '8', time: '12.00 - 12.40', code1: 'B.7', subject: 'Projek Kreatif dan Kewirausahaan', code2: '018', teacher: 'Putu Yenny Suryantari, S.Pd.' },
   ],
   'JUMAT': [
-    { no: '1', time: '07.05 - 07.45', code1: 'A.7', subject: 'Muatan Lokal (Bahasa Bali)', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
-    { no: '2', time: '07.45 - 08.25', code1: 'A.7', subject: 'Muatan Lokal (Bahasa Bali)', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
+    { no: '1', time: '07.05 - 07.45', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
+    { no: '2', time: '07.45 - 08.25', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
     { no: '3', time: '08.25 - 09.05', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
     { no: '4', time: '09.05 - 09.45', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
     { no: '-', time: '09.45 - 10.00', code1: '-', subject: 'ISTIRAHAT', code2: '-', teacher: '-' },
     { no: '5', time: '10.00 - 10.40', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '092', teacher: 'I Dewa Ayu Setiyawati, S.Pd.' },
-    { no: '6', time: '10.40 - 11.20', code1: 'B.6.4', subject: 'Desain Komunikasi Visual', code2: '092', teacher: 'I Dewa Ayu Setiyawati, S.Pd.' },
-    { no: '7', time: '11.20 - 12.00', code1: '-', subject: 'Kokurikuler', code2: '-', teacher: '-' },
+    { no: '6', time: '10.40 - 11.20', code1: 'A.7', subject: 'Muatan Lokal (Bahasa Bali)', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
+    { no: '7', time: '11.20 - 12.00', code1: 'A.7', subject: 'Muatan Lokal (Bahasa Bali)', code2: '076', teacher: 'Triono Doni Wijaya, S.Kom.' },
     { no: '8', time: '12.00 - 12.40', code1: '-', subject: 'Kokurikuler', code2: '-', teacher: '-' },
   ],
   'SABTU': [
@@ -81,6 +81,7 @@ export const teacherData: Teacher[] = [
 
 export const substituteData: Substitute[] = [
   { code: '007', name: 'A.A Gede Putra Dwi Artajaya, S.Si., M.Kom.', subject: 'Matematika', note: '' },
+  { code: '067', name: 'Nengah Dwi Rahayu, SE.', subject: 'Team Teaching', note: '' },
   { code: '070', name: 'Ni Putu Tirta Purnama Dewi, S.Pd', subject: 'Bahasa Inggris', note: '' },
 ];
 
