@@ -11,9 +11,19 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
   const days = Object.keys(scheduleData);
   const currentDay = getIndonesianDay();
   const [openDay, setOpenDay] = useState<string>(currentDay);
+  const [closingDay, setClosingDay] = useState<string>('');
 
   const toggleDay = (day: string) => {
-    setOpenDay(openDay === day ? '' : day);
+    if (openDay === day) {
+      setClosingDay(day);
+      setTimeout(() => {
+        setOpenDay('');
+        setClosingDay('');
+      }, 200);
+    } else {
+      setClosingDay('');
+      setOpenDay(day);
+    }
   };
 
   return (
@@ -30,6 +40,7 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
         const rows = scheduleData[day];
         const isToday = currentDay === day;
         const isOpen = openDay === day;
+        const isClosing = closingDay === day;
 
         return (
           <div key={day} className={`relative rounded-3xl overflow-hidden ${isToday ? 'bg-white/10 border-2 border-amber-400/60 shadow-[0_0_30px_rgba(251,191,36,0.25)]' : 'bg-white/5 border border-white/5'}`}>
@@ -60,8 +71,8 @@ export const ScheduleTab: React.FC<ScheduleTabProps> = () => {
             </button>
 
             {/* List View - Collapsible */}
-            {isOpen && (
-              <div className="divide-y divide-white/5 transition-all duration-normal ease-smooth">
+            {(isOpen || isClosing) && (
+              <div className="divide-y divide-white/5" style={{ animation: isClosing ? 'dropdown-exit 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards' : 'dropdown-enter 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards', transformOrigin: 'top' }}>
                 {rows.map((row, idx) => {
                   const isBreak = row.subject === 'ISTIRAHAT';
                   if (isBreak) {
